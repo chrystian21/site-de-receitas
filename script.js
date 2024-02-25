@@ -29,6 +29,8 @@ if (data.results && data.results.length > 0) {
         const urlRecipe = `https://api.spoonacular.com/recipes/${item.id}/information?apiKey=${apiKey}`
         const res = await fetch(urlRecipe)
         const dataRecipe = await res.json()
+        console.log(dataRecipe)
+
 
         const a = document.createElement("a")
         a.href = dataRecipe.sourceUrl
@@ -43,6 +45,12 @@ if (data.results && data.results.length > 0) {
         const name = document.createElement("h3")
         name.textContent = item.title
         a.appendChild(name)
+
+        const btn = document.createElement("button")
+        btn.textContent = "Click aqui para ver a receita"
+        btn.classList.add("btn-link")
+        a.appendChild(btn)
+
 
         teste.appendChild(a)
     })
