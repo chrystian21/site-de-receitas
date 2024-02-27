@@ -11,6 +11,7 @@ body {
 }
 
 .nav-bar {
+    display: flex;
     background-color: brown;
     height: 5rem;
     width: 100%;
@@ -75,5 +76,12 @@ a > img {
     border-radius: 10px;
     background-color: rgb(236, 150, 37);
     font-family: "Kanit", sans-serif;
+}
+
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    justify-self: center;
+    height: 80%;
 }
 
