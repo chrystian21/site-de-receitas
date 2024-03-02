@@ -1,6 +1,7 @@
 const inputSearch = document.querySelector(".search") 
 const btnSearch = document.querySelector(".btn-search")
 const teste = document.querySelector(".teste")
+const devsFav = document.querySelector(".control")
 
 const apiKey = "5bc50a772dfb4d70a62bfc7f8f7e7ab1"
 
@@ -19,11 +20,11 @@ const getRecipe = async function (recipe) {
 const showRecipe = async (recipe) => {
     const data = await getRecipe(recipe)
 
-// Limpa o conteúdo atual
+
 const teste = document.querySelector(".teste")
 teste.innerHTML = ""
 
-// Verifica se há resultados
+
 if (data.results && data.results.length > 0) {
     data.results.forEach(async item => {
         const urlRecipe = `https://api.spoonacular.com/recipes/${item.id}/information?apiKey=${apiKey}`
@@ -53,6 +54,7 @@ if (data.results && data.results.length > 0) {
 
 
         teste.appendChild(a)
+        devsFav.classList.add ("hide")
     })
 } else {
     console.log("Nenhum resultado encontrado.")
@@ -67,6 +69,39 @@ btnSearch.addEventListener("click", function () {
     const receita = inputSearch.value
     showRecipe(receita)
 })
+
+inputSearch.addEventListener("keyup", (e) => {
+    if (e.code === "Enter"){
+    const receita = inputSearch.value
+    showRecipe(receita)
+    }
+  })
+
+  const imgs = document.querySelector(".container-img")
+  const img = document.querySelectorAll("#img img")
+
+  let idX = 0
+  let position = 1200
+
+  function carrossel () {
+    idX++
+
+    if (idX > img.length - 1 ) {
+        idX = 0
+        position = 1200
+    } else {
+        position -= 800
+    }
+
+    
+
+    imgs.style.transform = `translateX(${position}px)`
+    console.log(idX)
+  }
+
+  setInterval(carrossel, 4000)
+
+
 
 
 
