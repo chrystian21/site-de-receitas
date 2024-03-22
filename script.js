@@ -57,7 +57,7 @@ if (data.results && data.results.length > 0) {
         devsFav.classList.add ("hide")
     })
 } else {
-    console.log("Nenhum resultado encontrado.")
+    alert("Nenhuma receita encontrada, tente outra receita.")
 }
 
 console.log(data)
