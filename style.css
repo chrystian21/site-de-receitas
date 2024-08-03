@@ -61,7 +61,7 @@ html, body {
     gap: 1rem;
 }
 
-a {
+.recipe-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,19 +71,35 @@ a {
     border: 3px solid black ;
     text-decoration-line: none;
     max-width: 15rem;
-    max-height: 18vh;
-    padding: 35px;
+    max-height: 25vh;
+    padding: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+
 
 a > img {
     margin: 10px;
     width: 70%;
 }
 
+a > h3 {
+    line-height: 1.2; /* Ajuste a altura da linha */
+    max-height: 2.4em; /* Ajuste conforme necessário */
+    min-height: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%; /* Garanta que o h3 ocupe toda a largura do contêiner */
+    text-align: center;
+}
+
 .btn-link {
     display: flex;
     margin: 5px;
     padding: 5px;
+    cursor: pointer;
     border: none;
     border-radius: 10px;
     background-color: rgb(236, 150, 37);
@@ -164,6 +180,8 @@ footer {
 .social-links {
     display: flex;
     flex-direction: row;
+    color: black;
+    text-decoration: none;
     background-color: brown;
     border: none;
     margin: 0;
@@ -188,6 +206,7 @@ footer {
         display: none;
     }
 }
+
 
 
 
